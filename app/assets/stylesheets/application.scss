@@ -222,20 +222,20 @@ h1 {
 }
 
 .color-stroke-orange {
-    background-image: url(color-stroke-orange.svg);
+    background-image: image-url('color-stroke-orange.svg');
     background-position: 45% 200%;
     background-repeat: no-repeat;
 }
 
 .color-stroke-red {
-    background-image: url(color-stroke-red.svg);
+    background-image: image-url('color-stroke-red.svg');
     background-repeat: no-repeat;
     background-size: 850px;
     background-position: 45% 140%;
 }
 
 .color-stroke-blue {
-    background-image: url(color-stroke-blue.svg);
+    background-image: image-url('color-stroke-blue.svg');
     background-repeat: no-repeat;
     background-size: 1000px;
     padding-bottom: 140px;
