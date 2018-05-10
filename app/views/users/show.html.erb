@@ -21,7 +21,9 @@
 
         <% @user.styles.each do |style| %>
             <div class="style-reel"></div>
-                <h1 class="page-subheading"><%= style.style_name %></h1>
+                <div class="color-line-orange">
+                    <h1 class="page-subheading"><%= style.style_name %></h1>
+                </div>
                 <% @user.prof_pictures.where(style: style).each do |image| %>
                     <div class="image-card">
                         <div class="image-card-image">

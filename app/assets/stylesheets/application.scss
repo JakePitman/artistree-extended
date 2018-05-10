@@ -330,6 +330,34 @@ input {
     background-position: 20% 80%;
 }
 
+.color-line-green {
+    background-image: image-url('color-line-green.svg');
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: 50% 92%;
+}
+
+.color-line-orange {
+    background-image: image-url('color-line-orange.svg');
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: 55% 92%;
+}
+
+.color-line-red {
+    background-image: image-url('color-line-red.svg');
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: 55% 78%;
+}
+
+.color-line-blue {
+    background-image: image-url('color-line-blue.svg');
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: 50% 88%;
+}
+
 .tilt-anticlockwise {
     transform: rotate(350deg);
 }
@@ -433,6 +461,7 @@ input {
     width: 100%;
     border: 1px solid $near_black;
     box-shadow: 2px 5px 5px $near_black; 
+    margin: 25px;
 }
 
 .artist-card-heading {
