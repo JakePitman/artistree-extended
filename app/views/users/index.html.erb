@@ -2,6 +2,21 @@
 <div class="divider"></div>
 
 <h1>Search Bar Goes Here</h1>
+
+<div class="search-box">
+    <%= form_tag users_index_path, method: 'get' do %>
+       <%= text_field_tag :search, params[:search] %>
+       <%= submit_tag "Search Artists", name: nil %>
+    <% end %>
+
+
+    <ul>
+        <% @search_results.each do |profile| %>
+            <li class="search-result"><%= link_to profile.username, profile %></li>
+        <% end %>
+    </ul>
+</div>
+
 <div class="divider"></div>
 
 <div class="color-splash color-splash-red">

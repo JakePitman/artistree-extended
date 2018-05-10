@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   def index
-
+      if params[:search] && params[:search] != ''      
+          @search_results = Profile.where(['username LIKE ?', "%#{params[:search]}%"])
+      else
+          @search_results = []
+      end
       #GET SUGGESTED ARTISTS
       @suggested_artists = []
       mystyles = current_user.styles

@@ -180,6 +180,35 @@ h1 {
     flex-wrap: wrap;
 }
 
+/*SEARCH*/
+
+.search-box {
+    border: 1px solid $near_black;
+}
+
+.search-box input {
+    border: 1px solid $blue;
+    border-radius: 15px;
+    padding: 5px;
+    font-size: 25px;
+    margin: 10px;
+}
+
+.search-result {
+    font-size: 25px;
+    padding: 15px;
+}
+
+.search-result a {
+    border-bottom: 1px solid transparent;
+    text-decoration: none;
+}
+.search-result a:hover {
+    background: transparent;
+    color: $near-black;
+    border-bottom: 1px solid $near_black;
+}
+
 /*COLOR EFFECTS*/
 
 .color-splash {
