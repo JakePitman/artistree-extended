@@ -212,6 +212,24 @@ li {
     flex-wrap: wrap;
 }
 
+/*FORMS*/
+form {
+    border: 1px solid $near_black;
+    width: 40vw;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+label {
+    font-size: 30px;
+}
+
+input {
+    border: 1px solid $blue;
+    border-radius: 5px;
+}
+
 /*SEARCH*/
 
 .search-box {
