@@ -1,6 +1,10 @@
 class StylesController < ApplicationController
   def index
-      @styles = Style.all.order(:style_name)
+      if params[:search]
+          @styles = Style.where(['LOWER(style_name) LIKE ?', "%#{params[:search]}%"])
+      else
+          @styles = Style.all.order(:style_name)
+      end
   end
 
   def show

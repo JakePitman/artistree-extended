@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def index
       if params[:search] && params[:search] != ''      
-          @search_results = Profile.where(['username LIKE ?', "%#{params[:search]}%"])
+          @search_results = Profile.where(['LOWER(username) LIKE ?', "%#{params[:search]}%"])
       else
           @search_results = []
       end

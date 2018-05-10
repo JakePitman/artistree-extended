@@ -2,10 +2,18 @@
     <h1 class="page-heading page-heading-orange">All Styles</h1>
 </div>
 <div class="divider"></div>
-<ul style="text-align: left;">
-    <% @styles.each do |style| %>
-        <li><%= link_to style.style_name, style %></li>    
+
+
+<div class="search-box">
+    <%= form_tag styles_index_path, method: 'get' do %>
+       <%= text_field_tag :search, params[:search] %>
+       <%= submit_tag "Search Styles", name: nil %>
     <% end %>
-</ul>
+    <ul>
+        <% @styles.each do |style| %>
+            <li class="search-result"><%= link_to style.style_name, style %></li>    
+        <% end %>
+    </ul>
+</div>
 
 <div class="divider"></div>
