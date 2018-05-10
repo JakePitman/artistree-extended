@@ -5,16 +5,18 @@
 
 
 <% @style.profiles.each do |profile| %>
-    <div class="artist-card">
-        <p class="card-title"><%= link_to profile.username, profile.user %></p>
-        <div class="artist-card-image-reel">
-            <div class="artist-card-image">
-                <% get_three_artists_samples(profile.prof_pictures.where(style: @style)).each do |sample_image| %>
-                    <%= image_tag sample_image.image_url(:medium) %>
-                    <p class="artist-card-description"><%= sample_image.description %></p>
-                <% end %>
+    <% unless (profile.user == current_user) || (profile.prof_pictures.where(style: @style).empty?) %>
+        <div class="artist-card">
+            <p class="card-title"><%= link_to profile.username, profile.user %></p>
+            <div class="artist-card-image-reel">
+                <div class="artist-card-image">
+                    <% get_three_artists_samples(profile.prof_pictures.where(style: @style)).each do |sample_image| %>
+                        <%= image_tag sample_image.image_url(:medium) %>
+                        <p class="artist-card-description"><%= sample_image.description %></p>
+                    <% end %>
+                </div>
             </div>
         </div>
-    </div>
+    <% end %>
     <div class="divider"></div>
 <% end %>
