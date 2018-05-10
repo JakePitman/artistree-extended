@@ -12,7 +12,7 @@
             <h2 class="artist-card-heading">Styles:</h2>
             <div class="style-btns artist-card-text">
                 <% @user.styles.each do |style| %>
-                    <h2 class="btn btn-orange"><%= link_to style.style_name, style %></h2>
+                    <p class="btn btn-orange"><%= link_to style.style_name, style %></h2>
                 <% end %>
             </div>
         </div>

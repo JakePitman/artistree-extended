@@ -45,7 +45,7 @@ $ruthie: 'Ruthie', cursive;
     position: fixed;
     bottom: 0;
     z-index: 1;
-    background: #F2F2F2;
+    background: rgba(255,255,255,0.9);
     width: 100%;
     display: flex;
 }
@@ -64,19 +64,34 @@ $ruthie: 'Ruthie', cursive;
     border-radius: 20px;
     padding: 20px 10px;
     font-size: 20px;
+    transition: all 0.5s;
+}
+
+.nav-btn:last-of-type {
+    margin-right: 20px; 
+}
+
+.nav-btn:hover a {
+    color: white;
+}
+.nav-btn:hover {
+    background: $near_black;
 }
 
 .nav-btn a {
     text-decoration: none;
+    transition: all 0.5s;
+    font-weight: bold;
 }
 
 .nav-btn a:hover {
     background: transparent; 
-    color: $near-black;
 }
 
+
+
 .user-btn {
-    min-width: 300px;
+    min-width: 30vw;
     text-align: center;
 }
 
@@ -99,22 +114,35 @@ li {
     height: 100px;
 }
 
+.logo {
+    background-image: image-url('leaves_vector.svg');   
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100px;
+}
+
+.logo-title {
+    font-family: $ruthie;
+    font-size: 75px;
+    padding: 20px 20px 20px 40px;
+    height: 100px;
+}
 
 /*--BUTTONS--*/
 
 .btn {
     margin: 15px 0;
-    width: 230px;
     font-family: $ruthie;
-    font-size: 60px;
+    font-size: 30px;
     padding: 30px 10px;
     border-radius: 50px;
     transition: all 0.4s;
+    text-align: center;
 }
 
 
 .btn a {
-    font-family: $ruthie;
+    font-family: $rosarivo;
     text-decoration: none;
     background: transparent;
     padding: 35px;
@@ -135,9 +163,10 @@ li {
     color: $green;
 }
 
-.btn-green a:hover {
+.btn-green:hover a {
     color: white;
 }
+
 
 .btn-green:hover {
     color: white;
@@ -147,7 +176,6 @@ li {
 .btn-orange {
     color: $orange;
     border: 1px solid $orange;
-    padding: 15px 50px 10px 15px;
     text-align: center;
 }
 

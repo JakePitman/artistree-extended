@@ -19,7 +19,9 @@
     <!--NAVBAR-->
     <% unless current_page?('/') %>
         <div class="navbar">
-            <%= image_tag("leaves_vector.svg") %>
+            <div class="logo">
+                <h4 class="logo-title">Artistree</h4>
+            </div>
             <div class="nav-btns">
                 <p class="nav-btn"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></p>
                 <% unless !user_signed_in? %>
