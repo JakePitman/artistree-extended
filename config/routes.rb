@@ -12,7 +12,7 @@ Rails.application.routes.draw do
         post 'charge'
     end
   end
-  
+  get 'styles/add_styles'  
   resources :prof_pictures
   resources :profile_pictures
   get 'current_user/profile'

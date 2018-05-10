@@ -1,7 +1,7 @@
 <div class="request-boards">
         <table class="request-board">
             <tr>
-                <th colspan="2"><%= link_to "Incoming Requests", 'incoming_requests' %></th>
+                <th colspan="2" class="request-board-title">Incoming Requests</th>
             </tr>
             <% current_user.incoming_requests.each do  |request| %>
                 <tr>
@@ -20,7 +20,7 @@
         </table>
         <table class="request-board">
             <tr>
-                <th colspan="2"><%= link_to "Outgoing Requests", 'outgoing_requests' %></th>
+                <th colspan="2" class="request-board-title">Outgoing Requests</th>
             </tr>
             <% current_user.outgoing_requests.each do  |request| %>
                 <tr>

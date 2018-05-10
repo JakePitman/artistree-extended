@@ -10,7 +10,9 @@
                     <%= link_to "Upload your first image!", new_prof_picture_path %>
                 </p>
         <% else %>
-            <%= link_to "Upload another image", new_prof_picture_path %>
+            <div class="btn btn-green">
+                <%= link_to "Upload another image", new_prof_picture_path %>
+            </div>
             <div class="divider"></div>
             <% current_user.styles.each do |style| %>
                 <div class="style-reel">

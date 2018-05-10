@@ -143,7 +143,8 @@ h1 {
 .btn-orange {
     color: $orange;
     border: 1px solid $orange;
-    padding: 15px 10px;
+    padding: 15px 50px 10px 15px;
+    text-align: center;
 }
 
 .btn-orange:hover {
@@ -152,6 +153,7 @@ h1 {
 
 .btn-orange a:hover {
     color: white;
+
 }
 
 .btn-blue {
@@ -170,6 +172,12 @@ h1 {
 
 .btn-blue a:hover {
     color: white;
+}
+
+.my-styles-btns {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 /*COLOR EFFECTS*/
@@ -278,7 +286,7 @@ h1 {
 }
 
 .request-board {
-    border: 1px solid $near-black;
+    border: 7px solid $brown;
     border-collapse: collapse;
     width: 400px;
 }
@@ -293,6 +301,9 @@ h1 {
 
 .request-board th {
     height: 100px;
+    font-size: 50px;
+    background: $brown;
+    color: white;
 }
 
 .request-board-username {
@@ -306,8 +317,8 @@ h1 {
 }
 
 .request-board a {
-    font-family: $ruthie;
-    font-size: 50px;
+    font-family: $rosarivo;
+    font-size: 40px;
     text-decoration: none;
     transition: all 0.3s;
     color: $near-black;

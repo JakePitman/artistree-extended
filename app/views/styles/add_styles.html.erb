@@ -1,0 +1,7 @@
+<h1 class="color-stroke color-stroke-orange">Add Styles</h1>
+<%= form_for current_user.profile do |f| %>
+    <%= f.collection_check_boxes :style_ids, @styles, :id, :style_name %>
+    <%= f.submit %>
+<% end %>
+
+<div class="divider"></div>

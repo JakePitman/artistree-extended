@@ -3,9 +3,11 @@
     <h2 class="request-heading">About Me:</h2>    
     <h2 class="request-data"><%= current_user.profile.about %></h2>
     <h2 class="request-heading">My Styles:</h2>
-    <% current_user.styles.each do |style| %>
-        <p class="btn btn-orange"><%= link_to style.style_name, styles_show_path({id: style.id}) %></p>
-    <% end %>
+    <div class="my-styles-btns">
+        <% current_user.styles.each do |style| %>
+            <p class="btn btn-orange"><%= link_to style.style_name, styles_show_path({id: style.id}) %></p>
+        <% end %>
+    </div>
     <h2 class="request-heading">Address:</h2>
     <h2 class="request-data"><%= full_address(current_user.profile) %></h2>
     <p class="btn btn-green"><%= link_to "Update Profile", edit_profile_path({id: current_user.profile.id}) %></p>
