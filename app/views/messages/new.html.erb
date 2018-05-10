@@ -1,0 +1,19 @@
+<h1>Messages#new</h1>
+
+<% if @message.errors.any? %>
+<h3>Oops there were some errors. Please try again:</h3>
+  <ul>
+    <% @message.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_for @message do |f| %>
+
+    <%= f.label :message_text %>
+    <%= f.text_area :message_text %>
+
+    <%= f.submit %>
+<% end %>

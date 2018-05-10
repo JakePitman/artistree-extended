@@ -1,0 +1,32 @@
+<div class="color-splash color-splash-green">
+        <h1 class="page-subheading">My Portfolio</h1>
+        <div class="divider"></div>
+
+        <% if current_user.prof_pictures.empty? %>
+            <h2>Your portfolio is a place for you to store examples of art that you have created! Images that
+                you upload to your portfolio will be visible to others, and they may contact you with a request
+                if they like your style!</h2>
+                <p class="btn btn-green" style="line-height: 1.1; width: 450px; text-align: center;">
+                    <%= link_to "Upload your first image!", new_prof_picture_path %>
+                </p>
+        <% else %>
+            <%= link_to "Upload another image", new_prof_picture_path %>
+            <div class="divider"></div>
+            <% current_user.styles.each do |style| %>
+                <div class="style-reel">
+                    <h1 class="page-subheading"><%= style.style_name %></h1>
+                    <% current_user.prof_pictures.where(style: style).each do |image| %>
+                        <div class="image-card">
+                            <div class="image-card-image">
+                                <%= image_tag image.image_url(:medium) %>
+                            </div>
+                            <p class="image-card-description">
+                                <%= image.description %>
+                            </p>
+                        </div>
+                    <% end %>
+                </div>
+            <% end %>
+
+        <% end %>
+    </div>

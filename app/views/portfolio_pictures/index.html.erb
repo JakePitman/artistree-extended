@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Portfolio Pictures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image data</th>
+      <th>Profile</th>
+      <th>Style</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @portfolio_pictures.each do |portfolio_picture| %>
+      <tr>
+        <td><%= portfolio_picture.image_data %></td>
+        <td><%= portfolio_picture.profile %></td>
+        <td><%= portfolio_picture.style %></td>
+        <td><%= portfolio_picture.description %></td>
+        <td><%= link_to 'Show', portfolio_picture %></td>
+        <td><%= link_to 'Edit', edit_portfolio_picture_path(portfolio_picture) %></td>
+        <td><%= link_to 'Destroy', portfolio_picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Portfolio Picture', new_portfolio_picture_path %>

@@ -1,0 +1,77 @@
+<%= image_tag("leaves_vector.svg") %>
+
+<h1 class="welcome-msg">Welcome to Artistree</h1>
+<p class="separator">__________________________</p>
+<% if user_signed_in? %>
+    <h1>Congratulations, you're in</h1>
+    <h1 class="btn btn-green"><%= link_to "Home", 'pages/home' %></h1>
+<% else %>
+    <h1>Been here before?</h1>
+    <p class="btn btn-green" style="margin: 60px 0;"><%= link_to "Sign in", new_user_session_path %></p>
+    <h1>First time with us?</h1>
+    <p class="btn btn-green">This way...</p>
+
+    <h1 class="welcome-msg">Artistree is your online platform for commissioning artists.</h1>
+    <h1>As an Artistree user, you will be able to...</h1>
+    <div class="divider"></div>
+    <div class="divider"></div>
+    <!--Green-->
+    <div class="color-splash color-splash-green">
+        <div class="tilt-anticlockwise">
+            <h1 class="welcome-heading">Build</h1>
+            <h1>your own portfolio</h1>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <h1 class="welcome-heading">Browse</h1>
+    <h1>other users' artwork:</h1>
+    <div class="divider"></div>
+    <div class="divider"></div>
+    <!--Orange-->
+    <div class="color-splash color-splash-orange">
+        <div class="tilt-clockwise">
+            <h1 class="welcome-heading">By Style</h1>
+        </div>
+    </div>
+    <div class="divider welcome-heading">&</div>
+    <div class="divider"></div>
+    <!--Red-->
+    <div class="color-splash color-splash-red">
+        <div class="tilt-anticlockwise">
+            <h1 class="welcome-heading">By Artist</h1>
+        </div>
+    </div>
+    <!--Blue-->
+    <div class="divider"></div>
+    <div class="divider"></div>
+    <div class="divider ruthie-text">And when you find an artist you like...</div>
+    <div class="divider"></div>
+    <div class="color-splash color-splash-blue">
+        <div class="tilt-anticlockwise">
+            <h1 class="welcome-heading">Connect</h1>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <h2 class="align-left" style="font-size: 45px;">Send a request form to your artist, with details specifying your desired:</h2>
+    <div class="divider"></div>
+    <p class="ruthie-text align-left">- Content</br>-Material</br>- Size</br>- etc.</p>
+    <div class="divider"></div>
+    <h2 class="align-left" style="font-size: 45px;">You can even attach a photo of something you would like made in the artist's specific style!</h2>
+    <div class="divider"></div>
+    <p class="ruthie-text align-right">Finally, a direct messaging board with your artist will allow you to negotiate prices and timeframes.</p>
+    
+    <div class="divider"></div>
+    <div class="divider"></div>
+    <h1 class="welcome-heading tilt-anticlockwise">And that's it!</h1> 
+    <div class="divider"></div>
+    <div class="divider"></div>
+    <h1>Ready to get started?</h1>
+    <div class="divider"></div>
+    <p class="btn btn-green" style="font-size: 40px;"><%= link_to "Sign up", new_user_registration_path %></p>   
+    <div class="divider"></div>
+    <h1>Grab a free account, set up a profile, and start browsing some amazing art!</h1>
+    <div class="divider"></div>
+
+<% end %>
+
+

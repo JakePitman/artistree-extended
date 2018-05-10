@@ -1,0 +1,16 @@
+<% if @request.artist == current_user %>
+    <div class="color-stroke color-stroke-blue">
+        <h1 class="page-heading">Incoming Request</h1>
+    </div>
+<% else %>
+    <div class="color-stroke color-stroke-blue">
+        <h1 class="page-heading">Outgoing Request</h1>
+    </div>
+<% end%>
+
+<div class="divider"></div>
+
+<%= render 'request_card' %>
+
+<div class="divider"></div>
+

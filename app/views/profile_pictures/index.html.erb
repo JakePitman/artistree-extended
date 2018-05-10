@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Profile Pictures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image data</th>
+      <th>Profile</th>
+      <th>Style</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @profile_pictures.each do |profile_picture| %>
+      <tr>
+        <td><%= profile_picture.image_data %></td>
+        <td><%= profile_picture.profile %></td>
+        <td><%= profile_picture.style %></td>
+        <td><%= profile_picture.description %></td>
+        <td><%= link_to 'Show', profile_picture %></td>
+        <td><%= link_to 'Edit', edit_profile_picture_path(profile_picture) %></td>
+        <td><%= link_to 'Destroy', profile_picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Profile Picture', new_profile_picture_path %>

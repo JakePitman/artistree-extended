@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Prof Pictures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Profile</th>
+      <th>Style</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prof_pictures.each do |prof_picture| %>
+      <tr>
+        <td><%= image_tag prof_picture.image_url(:medium) %></td>
+        <td><%= prof_picture.profile.username %></td>
+        <td><%= prof_picture.style.style_name %></td>
+        <td><%= prof_picture.description %></td>
+        <td><%= link_to 'Show', prof_picture %></td>
+        <td><%= link_to 'Edit', edit_prof_picture_path(prof_picture) %></td>
+        <td><%= link_to 'Destroy', prof_picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prof Picture', new_prof_picture_path %>

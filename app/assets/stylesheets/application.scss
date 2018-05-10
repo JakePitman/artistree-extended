@@ -1,0 +1,597 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+$near_black: #4F4F4F;
+$off_white: #F2F2F2;
+$brown: #753926;
+$green: #35A865;
+$orange: #FF984E;
+$red: #E73A3A;
+$blue: #50AAC8;
+
+$rosarivo: 'Rosarivo', serif;
+$ruthie: 'Ruthie', cursive;
+
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    color: $near-black;
+    font-family: $rosarivo;
+    line-height: 1.3;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.navbar {
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    background: #F2F2F2;
+    width: 100%;
+    display: flex;
+}
+
+.nav-btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.nav-btn {
+    font-family: $rosarivo;
+    border: 1px solid $near-black;
+    border-radius: 20px;
+    padding: 20px 10px;
+    font-size: 20px;
+}
+
+.nav-btn a {
+    text-decoration: none;
+}
+
+.nav-btn a:hover {
+    background: transparent; 
+    color: $near-black;
+}
+
+.user-btn {
+    min-width: 300px;
+    text-align: center;
+}
+
+.navbar img {
+    height: 100px;
+    display: inline-block;
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 1.4;
+}
+/*-----------------REUSABLE ELEMENTS---------------------*/
+
+.divider {
+    height: 100px;
+}
+
+
+/*--BUTTONS--*/
+
+.btn {
+    margin: 15px 0;
+    width: 230px;
+    font-family: $ruthie;
+    font-size: 60px;
+    padding: 30px 10px;
+    border-radius: 50px;
+    transition: all 0.4s;
+}
+
+
+.btn a {
+    font-family: $ruthie;
+    text-decoration: none;
+    background: transparent;
+    padding: 35px;
+    transition: all 0.4s;
+}
+
+.style-btns {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.btn-green {
+    border: 1px solid $green;
+}
+
+.btn-green a {
+    color: $green;
+}
+
+.btn-green a:hover {
+    color: white;
+}
+
+.btn-green:hover {
+    color: white;
+    background: $green;
+}
+
+.btn-orange {
+    color: $orange;
+    border: 1px solid $orange;
+    padding: 15px 10px;
+}
+
+.btn-orange:hover {
+    background: $orange;
+}
+
+.btn-orange a:hover {
+    color: white;
+}
+
+.btn-blue {
+    color: $blue;
+    border: 1px solid $blue;
+    padding: 15px 10px;
+}
+
+.btn-blue:hover {
+    background: $blue;
+}
+
+.btn-blue a {
+    text-align: center;
+}
+
+.btn-blue a:hover {
+    color: white;
+}
+
+/*COLOR EFFECTS*/
+
+.color-splash {
+
+}
+
+.color-splash-green {
+    text-align: right;
+}
+
+.color-splash-orange {
+    text-align: left;
+}
+
+.color-splash-red {
+    text-align: right;
+}
+
+.color-stroke {
+    height: 150px;
+    font-family: $ruthie;
+    font-size: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 80px;
+    margin-bottom: -40px;
+}
+
+.color-stroke a {
+    font-family: $ruthie;
+    font-size: 100px;
+    padding-top: 10px;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+.color-stroke a:hover {
+    background: transparent;
+    color: $near-black;
+    font-size: 105px;
+}
+
+.color-stroke-green {
+    background-image: url(color-stroke-green.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.color-stroke-orange {
+    background-image: url(color-stroke-orange.svg);
+    background-position: 45% 200%;
+    background-repeat: no-repeat;
+}
+
+.color-stroke-red {
+    background-image: url(color-stroke-red.svg);
+    background-repeat: no-repeat;
+    background-size: 850px;
+    background-position: 45% 140%;
+}
+
+.color-stroke-blue {
+    background-image: url(color-stroke-blue.svg);
+    background-repeat: no-repeat;
+    background-size: 1000px;
+    padding-bottom: 140px;
+    padding-top: 100px;
+    background-position: 20% 80%;
+}
+
+.tilt-anticlockwise {
+    transform: rotate(350deg);
+}
+
+.tilt-clockwise {
+    transform: rotate(15deg);
+}
+
+.ruthie-text {
+    font-family: $ruthie;
+    font-size: 60px;
+    line-height: 1.4;
+}
+
+.ruthie-paragraph {
+    font-family: $ruthie;
+    font-size: 40px;
+    line-height: 1.3;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.request-boards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.request-board {
+    border: 1px solid $near-black;
+    border-collapse: collapse;
+    width: 400px;
+}
+
+.request-board tr {
+    height: 60px;
+}
+
+.request-board th, .request-board td {
+    border: 1px solid $near-black; 
+}
+
+.request-board th {
+    height: 100px;
+}
+
+.request-board-username {
+    width: 400px;
+}
+
+.request-board td {
+    font-family: $rosarivo;
+    font-size: 15px;
+    padding: 10px 10px 0 10px;
+}
+
+.request-board a {
+    font-family: $ruthie;
+    font-size: 50px;
+    text-decoration: none;
+    transition: all 0.3s;
+    color: $near-black;
+}
+
+.request-board a:hover {
+    font-size: 55px;
+    background: transparent;
+    color: $near-black;
+}
+
+.checkbox {
+    width: 40px;
+    color: $red;
+}
+
+.status-box-green {
+    background: $green;
+}
+.status-box-orange {
+    background: $orange;
+}
+.status-box-blue {
+    background: $blue;
+}
+.status-box-red {
+    background: $red;
+}
+
+/*--CARDS--*/
+
+.artist-card {
+    width: 100%;
+    border: 1px solid $near_black;
+    box-shadow: 2px 5px 5px $near_black; 
+}
+
+.artist-card-heading {
+   text-align: left;
+   font-size: 30px;
+   font-family: $rosarivo;
+   font-style: italic;
+   padding: 15px;
+}
+
+.artist-card-text {
+    text-align: left;
+    font-size: 30px;
+    font-family: $rosarivo;
+    padding: 15px;
+    border-bottom: 1px solid $near_black;
+    background: white;
+}
+
+.card-title {
+    font-family: $rosarivo;
+    font-size: 50px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+
+.image-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 3px solid $brown;
+    width: 330px;
+    padding-top: 10px;
+    background: $off_white;
+    box-shadow: 0px 5px 5px $near_black;
+}
+
+.image-card-image {
+    margin-bottom: 5px;
+}
+
+.image-card-description {
+    background: white;
+    font-family: $rosarivo;
+    height: 100px;
+    width: 300px;
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*--*/
+
+
+
+.artist-card {
+    width: 100%;
+    border: 3px solid $brown;
+    background: $off_white;
+    box-shadow: 0px 5px 5px $near_black;
+}
+
+.artist-card a {
+    font-family: $rosarivo;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.artist-card a:hover {
+    background: none;
+    color: $near_black;
+    font-size: 55px;
+}
+
+.artist-card-image-reel {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    jusfify-content: space-between;
+}
+
+.artist-card-image-reel img {
+
+}
+
+.artist-card-image {
+    display: flex;
+    flex-direction: column;
+}
+
+.artist-card-description {
+    padding: 10px;
+    font-family: $rosarivo;
+}
+
+/*--*/
+
+.request-card {
+    border: 1px solid $near_black;
+}
+
+.request-title {
+    font-size: 70px;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid grey;
+}
+
+.request-heading {
+    font-size: 40px;
+    text-align: left;
+    padding: 10px;
+}
+
+.request-img {
+    border-bottom: 1px solid grey;
+    padding: 10px;
+}
+
+.request-data {
+    padding: 10px; 
+    border-bottom: 1px solid grey;
+}
+
+/*-----------------pages/welcome--------------*/
+.welcome-msg {
+    font-size: 50px;
+    margin-top: 20vh;
+    padding-bottom: 40px;
+}
+
+.separator {
+    margin: 10vh 0;
+}
+
+.welcome-heading {
+    font-family: $ruthie;
+    font-size: 150px;
+}
+
+/*---------------users/index, users/show, styles/index & styles/show-----------------*/
+.page-heading, .page-subheading {
+    display: block;
+    font-family: $ruthie;
+    text-align: center;
+    transform: rotate(355deg);
+}
+
+.page-heading {
+    font-size: 150px;
+}
+
+.page-heading-orange {
+    padding-top: 30px;
+    transform: rotate(358deg);
+}
+
+.page-subheading {
+    font-size: 100px;
+}
+
+/*---------------MESSAGES--------------*/
+
+.buyer-messages p, .artist-messages p {
+    font-family: $rosarivo;
+}
+
+.buyer-messages {
+    background: #CEF3FF;
+}
+
+.buyer-message-head {
+    padding: 20px;
+    text-align: left;
+    font-size: 30px;
+}
+
+.buyer-message-text {
+    padding: 0px 10px 15px 40px;
+    text-align: left;
+}
+
+.artist-messages {
+    background: #DCF6FF;
+}
+
+.artist-message-head {
+    padding: 20px;
+    text-align: right;
+    font-size: 30px;
+}
+
+.artist-message-text {
+    padding: 0px 50px 15px 20px;
+    text-align: right;
+}
+
+.new-message-box {
+    border: 1px solid $blue;
+} 
+
+.message-input-area {
+    width: 100%;
+    padding: 10px;
+}
+
+.message-input-area textarea {
+    border: 1px solid $blue;
+    width: 90%;
+    font-size: 20px;
+}
+
+.message-submit-btn {
+    padding: 0px 0px 10px 0px;
+}
+
+.message-submit-btn input {
+    border: 1px solid $blue;
+    border-radius: 20px;
+    padding: 5px;
+    font-size: 30px;
+    color: $blue;
+    transition: all 0.3s;
+}
+
+.message-submit-btn input:hover {
+    background: $blue;
+    color: white;
+}
+
+/*-------STATUS BAR------*/
+
+.pending {
+    background: $orange;
+}
+
+.confirmed {
+    background: $green;
+}
+
+.paid {
+    background: $blue;
+}
+
+.denied {
+    background: $red;
+}
+
+

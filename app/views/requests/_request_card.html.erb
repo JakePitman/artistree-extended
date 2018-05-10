@@ -1,0 +1,68 @@
+<div class="request-card">
+    <% if @request.artist == current_user %>
+        <h2 class="request-title"><%= "From: #{@request.buyer.profile.username}" %></h2>
+    <% else %>
+        <h2 class="request-title"><%= "To: #{@request.artist.profile.username}" %></h2>
+    <% end %>
+
+    <div class="divider"></div>
+
+    <h2 class="page-subheading">Specifications</h2>
+
+    <div class="divider"></div>
+
+    <h2 class="request-heading">Image:</h2>
+    <% unless @request.image_data.nil? %>
+        <div class="request-img"><%= image_tag @request.image_url(:large) %></div>
+    <% else %>
+        <h2 class="request-data">No image provided</h2>
+    <% end %>
+    <h2 class="request-heading">Messages:</h2>
+    <div class="messages">
+
+
+        <% @request.messages.each do |message| %>
+             <% if message.user == @request.buyer %>
+                <div class="buyer-messages">
+                    <p class="buyer-message-head"><%= message.user.profile.username %></p>
+                    <p class="buyer-message-text "><%= message.message_text %></p>
+                </div>
+             <% else %>
+                <div class="artist-messages">
+                    <p class="artist-message-head"><%= message.user.profile.username %></p>
+                    <p class="artist-message-text "><%= message.message_text %></p>
+                </div>
+             <% end %>
+        <% end %>
+
+        <!--MESSAGE BTN-->
+             
+        <div class="new-message-box">
+             <%= form_with model: @message, local: true do |f| %>
+
+                <%= f.hidden_field(:user_id, value: current_user) %>
+                <%= f.hidden_field(:request_id, value: @request.id) %>
+                
+                <div class="message-input-area"> 
+                    <%= f.text_area :message_text %>
+                </div>
+
+                <div class="message-submit-btn">
+                    <%= f.submit %>
+                </div>
+             <% end %>
+        </div>
+
+    </div>
+        <!--REQUEST STATUS-->
+
+        <% if @request.buyer == current_user %>
+            <%= render 'status_for_buyer' %>
+        <% else %>
+            <%= render 'status_for_artist' %>
+        <% end %>
+
+    
+</div>
+
+<div class="divider"></div>

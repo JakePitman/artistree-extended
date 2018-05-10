@@ -1,0 +1,26 @@
+<h1 class="color-stroke color-stroke-red">Artists</h1>
+<div class="divider"></div>
+
+<h1>Search Bar Goes Here</h1>
+<div class="divider"></div>
+
+<div class="color-splash color-splash-red">
+    <h1 class="page-subheading">Suggested Artists</h1>
+</div>
+<div class="divider"></div>
+
+
+<% @suggested_artists.each do |artist| %>
+    <div class="artist-card">
+        <p class="card-title"><%= link_to artist.profile.username, artist %></p>
+        <div class="artist-card-image-reel">
+            <% get_three_samples(artist).each do |sample_image| %>
+                <%= image_tag sample_image.image_url(:medium) %>
+            <% end %>
+        </div>
+    </div>
+<% end %>
+
+
+<div class="divider"></div>
+<div class="divider"></div>

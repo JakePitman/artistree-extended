@@ -1,0 +1,8 @@
+<h1 class="page-subheading">My Info</h1>
+<div class="request-card">
+    <h2 class="request-heading">About Me:</h2>    
+    <h2 class="request-data"><%= current_user.profile.about %></h2>
+    <h2 class="request-heading">Address:</h2>
+    <h2 class="request-data"><%= full_address(current_user.profile) %></h2>
+    <p class="btn btn-green"><%= link_to "Update Profile", edit_profile_path({id: current_user.profile.id}) %></p>
+</div>

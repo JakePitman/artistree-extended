@@ -1,0 +1,39 @@
+<% if @request.confirmed.nil? %>
+    <div class="status-bar pending">
+        <h2 class="request-heading">Request Status:</h2>
+        <h2 class="request-data">Pending - Please make a selection:</h2>
+        <p class="btn btn-red"><%= link_to "Deny Request", request_path(@request, request_option: 0),  method: :patch %></p>
+        <!--ATTEMPTING CONFIRM FORM - WITH PRICE-->
+         <%= form_with model: @request, local: true do |f| %>
+
+            <%= f.hidden_field(:confirmed, value: true) %>
+            
+            <div class="message-input-area"> 
+                <%= f.label :price %>
+                <%= f.number_field :price %>
+            </div>
+
+            <div class="message-submit-btn">
+                <%= f.submit %>
+            </div>
+         <% end %>
+         <!--END-->
+    </div>
+<% elsif (@request.confirmed == true) && (@request.paid == false) %>
+    <div class="status-bar confirmed">
+        <h2 class="request-heading">Request Status:</h2>
+        <h2 class="request-data">Confirmed</h2>
+        <h2 class="request-data"><%= "Awaiting Payment of $#{@request.price}" %></h2>
+    </div>
+<% elsif @request.confirmed == true && @request.paid == true %>
+    <div class="status-bar paid">
+        <h2 class="request-heading">Request Status:</h2>
+        <h2 class="request-data">Confirmed</h2>
+        <h2 class="request-data">Payment sent</h2>
+    </div>
+<% elsif @request.confirmed == false %>
+    <div class="status-bar denied">
+        <h2 class="request-heading">Request Status:</h2>
+        <h2 class="request-data">Denied</h2>
+    </div>
+<% end %>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Rosarivo font-->
+    <link href="https://fonts.googleapis.com/css?family=Rosarivo:400,400i&amp;subset=latin-ext" rel="stylesheet">
+    <!--Ruthie font-->
+    <link href="https://fonts.googleapis.com/css?family=Ruthie&amp;subset=latin-ext" rel="stylesheet">
+
+    <title>Artistree</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    
+    <!--NAVBAR-->
+    <% unless current_page?('/') %>
+        <div class="navbar">
+            <%= image_tag("leaves_vector.svg") %>
+            <div class="nav-btns">
+                <p class="nav-btn"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></p>
+                <% unless !user_signed_in? %>
+                    <% if current_user.profile.nil? || current_user.profile.username.nil? %>
+                        <p class="nav-btn user-btn"><%= link_to current_user.email, '/current_user/profile' %></p>
+                    <% else %>
+                        <p class="nav-btn user-btn"><%= link_to current_user.profile.username, '/current_user/profile' %></p>
+                    <% end %>
+                <% end %>
+                <p class="nav-btn"><a href="/pages/home">Home</a></p>
+            </div>
+        </div>
+    <% end %>
+
+    <div class="container">
+        <%= yield %>
+    </div>
+  </body>
+</html>

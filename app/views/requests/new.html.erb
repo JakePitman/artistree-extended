@@ -1,0 +1,26 @@
+<div class="color-stroke color-stroke-blue">
+    <h1 class="page-heading">New Request</h1>
+</div>
+
+<% if @request.errors.any? %>
+<h3>Oops there were some errors. Please try again:</h3>
+  <ul>
+    <% @request.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_for @request do |f| %>
+
+    <%= f.label :image %>
+    <%= f.hidden_field :image, value: @request.cached_image_data %>
+    <%= f.file_field :image %>
+
+    <%= f.label :style_id %>
+    <%= f.collection_select :style_id, @styles, :id, :style_name, include_blank: true %>
+
+    <%= f.hidden_field(:artist_id, value: @artist.id) %>
+    <%= f.submit %>
+<% end %>

@@ -1,0 +1,44 @@
+<% unless @user.profile.nil? %>
+    <div class="color-stroke color-stroke-red">
+            <h1 class="page-heading"><%= @user.profile.username %></h1>    
+    </div>
+        <div class="divider"></div>
+
+        <div class="artist-card">
+            <h2 class="artist-card-heading"><%= "About #{ @user.profile.username }:" %></h2>
+            <h2 class="artist-card-text"><%= @user.profile.about %></h2>
+            <h2 class="artist-card-heading">Lives in:</h2>
+            <h2 class="artist-card-text"><%= @user.profile.country_code %></h2>
+            <h2 class="artist-card-heading">Styles:</h2>
+            <div class="style-btns artist-card-text">
+                <% @user.styles.each do |style| %>
+                    <h2 class="btn btn-orange"><%= link_to style.style_name, style %></h2>
+                <% end %>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <% @user.styles.each do |style| %>
+            <div class="style-reel"></div>
+                <h1 class="page-subheading"><%= style.style_name %></h1>
+                <% @user.prof_pictures.where(style: style).each do |image| %>
+                    <div class="image-card">
+                        <div class="image-card-image">
+                            <%= image_tag image.image_url(:medium) %>
+                        </div>
+                        <p class="image-card-description">
+                            <%= image.description %>
+                        </p>    
+                    </div>
+                <% end %>
+        <% end %>
+
+        <div class="divider"></div>
+
+        <p class="btn btn-blue"><%= link_to "Send a Request", new_request_path(request.parameters.merge({artist: @user})) %></p>
+
+        <div class="divider"></div>
+<% else %>
+    <h2>This user does not have a profile</h2>
+<% end %>
