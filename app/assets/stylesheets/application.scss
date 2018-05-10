@@ -310,6 +310,7 @@ h1 {
     width: 400px;
 }
 
+
 .request-board td {
     font-family: $rosarivo;
     font-size: 15px;
@@ -325,9 +326,8 @@ h1 {
 }
 
 .request-board a:hover {
-    font-size: 55px;
     background: transparent;
-    color: $near-black;
+    color: $brown;
 }
 
 .checkbox {
